@@ -1,0 +1,29 @@
+<!-- <model-viewer>を使って、3Dを、WEBサイトに埋め込む例 -->
+<!DOCTYPE html>
+<html>
+<body>
+<!-- CSSで表示サイズや、背景色を指定する -->
+
+↓成田広域
+<style>
+model-viewer {
+  width: 1280px;
+  height:720px;
+  background-color: 000000;
+}
+model-viewer#reveal {
+    --poster-color: transparent;
+}
+</style>
+<!-- コンポーネントをCDNで読み込む -->
+<script type="module" src="https://unpkg.com/@google/model-viewer/dist/model-viewer.min.js"></script>
+<script nomodule src="https://unpkg.com/@google/model-viewer/dist/model-viewer-legacy.js"></script>
+
+<!-- 3Dモデルを読み込む。
+"exposure"は露出の制御、明るさが変わる。
+"auto-rotate"は自動的に回転表示。
+poster="hoge.png"は、3Dが読み込まれるまで、画像のhoge.pngを表示する設定-->
+<model-viewer min-field-of-view="1deg" max-camera-orbit="auto 90deg auto" camera-controls poster="hoge.gif" src="Glb_narita_kouiki.glb"  exposure="1"></model-viewer>
+
+</body>
+</html>
